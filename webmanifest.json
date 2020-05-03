@@ -4,7 +4,7 @@
 	"start_url": ".",
 	"display": "standalone",
 	"background_color": "#ffffff",
-	"description": "App shows current time as HH:MM:SS.",
+	"description": "See current time in HH:MM:SS format.",
 	"icons": [
 		{
 			"src": "icon/36x36.png",
