@@ -3,6 +3,7 @@
 	"short_name": "Just Time",
 	"start_url": ".",
 	"display": "standalone",
+	"theme_color": "#000000",
 	"background_color": "#ffffff",
 	"description": "See current time in HH:MM:SS format.",
 	"icons": [
