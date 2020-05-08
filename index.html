@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Just Time</title>
-	<meta name="description" content="See current time in HH:MM:SS format." />
-	<link rel="shortcut icon" href="icon/favicon.svg">
-	<link rel="manifest" href="webmanifest.json">
-	<meta name=" theme-color" content="#000000">
-	<style>
-		body {
-			color: black;
-			background-color: white;
-		}
-
-		@media (prefers-color-scheme: dark) {
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Just Time</title>
+		<meta name="description" content="See current time in HH:MM:SS format." />
+		<link rel="shortcut icon" href="icon/favicon.svg" />
+		<link rel="manifest" href="webmanifest.json" />
+		<meta name=" theme-color" content="#000000" />
+		<style>
 			body {
-				color: white;
-				background-color: black;
-			}
-		}
-
-		.time {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			font-size: 20vmin;
-			font-variant-numeric: tabular-nums;
-			font-family: sans-serif;
-		}
-	</style>
-</head>
-
-<body>
-	<time class="time">…</time>
-	<script>
-		(function () {
-			const $time = document.querySelector('.time')
-
-			function twoDigits(input) {
-				return input.toString().padStart(2, '0')
+				color: black;
+				background-color: white;
 			}
 
-			function updateTime() {
-				const now = new Date()
-				$time.innerText = `${twoDigits(now.getHours())}:${twoDigits(now.getMinutes())}:${twoDigits(now.getSeconds())}`
+			@media (prefers-color-scheme: dark) {
+				body {
+					color: white;
+					background-color: black;
+				}
 			}
 
-			function loop() {
-				updateTime()
-				const now = new Date()
-				const nextTick = Math.max(1, 1000 - now.getTime() % 1000)
-				setTimeout(loop, nextTick)
+			.time {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 20vmin;
+				font-variant-numeric: tabular-nums;
+				font-family: sans-serif;
 			}
+		</style>
+	</head>
 
-			loop()
+	<body>
+		<time class="time">…</time>
+		<script>
+			;(function () {
+				const $time = document.querySelector('.time')
 
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('serviceWorker.js')
-			}
-		})()
-	</script>
-</body>
+				function twoDigits(input) {
+					return input.toString().padStart(2, '0')
+				}
 
+				function updateTime() {
+					const now = new Date()
+					$time.innerText = `${twoDigits(now.getHours())}:${twoDigits(
+						now.getMinutes(),
+					)}:${twoDigits(now.getSeconds())}`
+				}
+
+				function loop() {
+					updateTime()
+					const now = new Date()
+					const nextTick = Math.max(1, 1000 - (now.getTime() % 1000))
+					setTimeout(loop, nextTick)
+				}
+
+				loop()
+
+				if ('serviceWorker' in navigator) {
+					navigator.serviceWorker.register('serviceWorker.js')
+				}
+			})()
+		</script>
+	</body>
 </html>
