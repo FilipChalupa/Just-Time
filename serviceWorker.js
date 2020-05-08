@@ -1,19 +1,17 @@
-const VERSION = 'v1'
+const VERSION = 'v2'
 
-self.addEventListener('fetch', event => {
-	return caches.match(event.request).then(response => {
-		function fetchAndCache() {
-			return fetch(event.request).then(response => {
-				caches.open(VERSION).then(cache => cache.put(event.request, response.clone()));
-				return response;
-			});
-		}
-
-		if (!response) {
-			return fetchAndCache();
-		}
-
-		fetchAndCache();
-		return response;
-	});
-});
+self.addEventListener('fetch', function (event) {
+	event.respondWith(
+		caches.open(VERSION).then(function (cache) {
+			return cache.match(event.request).then(function (response) {
+				var fetchPromise = fetch(event.request).then(function (
+					networkResponse,
+				) {
+					cache.put(event.request, networkResponse.clone())
+					return networkResponse
+				})
+				return response || fetchPromise
+			})
+		}),
+	)
+})
