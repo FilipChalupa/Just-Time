@@ -6,6 +6,7 @@
 	"theme_color": "#000000",
 	"background_color": "#ffffff",
 	"description": "See current time in HH:MM:SS format.",
+	"categories": ["productivity", "utilities"],
 	"icons": [
 		{
 			"src": "icon/36x36.png",
