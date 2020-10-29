@@ -1,0 +1,5 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : { "namespace": "android_app", "package_name": "eu.just_time.twa",
+                   "sha256_cert_fingerprints": ["45:23:2E:D0:96:E7:E5:9A:DC:0D:EE:F6:AA:AC:3C:0D:A9:EE:8F:BA:69:22:5E:02:EC:CC:6C:C7:DB:30:2B:2B"] }
+    }]
