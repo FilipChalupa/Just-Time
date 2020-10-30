@@ -7,6 +7,12 @@
 	"background_color": "#ffffff",
 	"description": "See current time in HH:MM:SS format.",
 	"categories": ["productivity", "utilities"],
+	"shortcuts": [
+		{
+			"name": "HH:MM",
+			"url": "./?hideSeconds"
+		}
+	],
 	"icons": [
 		{
 			"src": "icon/36x36.png",
