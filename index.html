@@ -96,6 +96,10 @@
 				if ('serviceWorker' in navigator) {
 					navigator.serviceWorker.register('serviceWorker.js')
 				}
+
+				if ('wakeLock' in navigator) {
+					navigator.wakeLock.request()
+				}
 			})()
 		</script>
 	</body>
