@@ -11,6 +11,9 @@
 		{
 			"name": "HH:MM",
 			"url": "./?hideSeconds"
+		},{
+			"name": "HH:MM:SS",
+			"url": "./"
 		}
 	],
 	"icons": [
