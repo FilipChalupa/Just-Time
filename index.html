@@ -88,6 +88,11 @@
 				}
 
 				function updateTime() {
+					const isUserSelecting = !document.getSelection().isCollapsed
+					if (isUserSelecting) {
+						return
+					}
+
 					const now = new Date()
 					$time.innerText = `${twoDigits(now.getHours())}:${twoDigits(
 						now.getMinutes(),
