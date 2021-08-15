@@ -10,10 +10,26 @@
 	"shortcuts": [
 		{
 			"name": "HH:MM",
-			"url": "./?hideSeconds"
+			"url": "./?hideSeconds",
+			"icons": [
+				{
+					"src": "icon/shortcut-hhmm.png",
+					"sizes": "96x96",
+					"type": "image/png",
+					"purpose": "any"
+				}
+			]
 		},{
 			"name": "HH:MM:SS",
-			"url": "./"
+			"url": "./",
+			"icons": [
+				{
+					"src": "icon/shortcut-hhmmss.png",
+					"sizes": "96x96",
+					"type": "image/png",
+					"purpose": "any"
+				}
+			]
 		}
 	],
 	"icons": [
